@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\admin\\Desktop\\Pasta Pessoal\\Projetos\\PrimeiroProjetoUdemy\\PrimeiroProjetoUdemy.csproj": {}
+    "C:\\Users\\admin\\Desktop\\Pasta Pessoal\\Projetos\\PrimeiroProjetoUdemy\\PrimeiroProjetoUdemy\\PrimeiroProjetoUdemy.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\Desktop\\Pasta Pessoal\\Projetos\\PrimeiroProjetoUdemy\\PrimeiroProjetoUdemy.csproj": {
+    "C:\\Users\\admin\\Desktop\\Pasta Pessoal\\Projetos\\PrimeiroProjetoUdemy\\PrimeiroProjetoUdemy\\PrimeiroProjetoUdemy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\Desktop\\Pasta Pessoal\\Projetos\\PrimeiroProjetoUdemy\\PrimeiroProjetoUdemy.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\Desktop\\Pasta Pessoal\\Projetos\\PrimeiroProjetoUdemy\\PrimeiroProjetoUdemy\\PrimeiroProjetoUdemy.csproj",
         "projectName": "PrimeiroProjetoUdemy",
-        "projectPath": "C:\\Users\\admin\\Desktop\\Pasta Pessoal\\Projetos\\PrimeiroProjetoUdemy\\PrimeiroProjetoUdemy.csproj",
+        "projectPath": "C:\\Users\\admin\\Desktop\\Pasta Pessoal\\Projetos\\PrimeiroProjetoUdemy\\PrimeiroProjetoUdemy\\PrimeiroProjetoUdemy.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\admin\\Desktop\\Pasta Pessoal\\Projetos\\PrimeiroProjetoUdemy\\obj\\",
+        "outputPath": "C:\\Users\\admin\\Desktop\\Pasta Pessoal\\Projetos\\PrimeiroProjetoUdemy\\PrimeiroProjetoUdemy\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
