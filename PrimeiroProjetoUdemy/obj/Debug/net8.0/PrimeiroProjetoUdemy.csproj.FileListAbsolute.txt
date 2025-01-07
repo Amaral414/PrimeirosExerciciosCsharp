@@ -1,0 +1,14 @@
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\bin\Debug\net8.0\PrimeiroProjetoUdemy.exe
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\bin\Debug\net8.0\PrimeiroProjetoUdemy.deps.json
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\bin\Debug\net8.0\PrimeiroProjetoUdemy.runtimeconfig.json
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\bin\Debug\net8.0\PrimeiroProjetoUdemy.dll
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\bin\Debug\net8.0\PrimeiroProjetoUdemy.pdb
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\obj\Debug\net8.0\PrimeiroProjetoUdemy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\obj\Debug\net8.0\PrimeiroProjetoUdemy.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\obj\Debug\net8.0\PrimeiroProjetoUdemy.AssemblyInfo.cs
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\obj\Debug\net8.0\PrimeiroProjetoUdemy.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\obj\Debug\net8.0\PrimeiroProjetoUdemy.dll
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\obj\Debug\net8.0\refint\PrimeiroProjetoUdemy.dll
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\obj\Debug\net8.0\PrimeiroProjetoUdemy.pdb
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\obj\Debug\net8.0\PrimeiroProjetoUdemy.genruntimeconfig.cache
+C:\Users\admin\Desktop\Pasta Pessoal\Projetos\PrimeiroProjetoUdemy\obj\Debug\net8.0\ref\PrimeiroProjetoUdemy.dll
