@@ -6,8 +6,14 @@ namespace PrimeiroProjetoUdemy
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Funfo");
-            Console.WriteLine("Funfo");
+            char genero = 'M';
+            int idade = 24;
+            double saldo = 10.35874;
+            string nome = "Gabriel";
+
+            Console.WriteLine(nome);
+            Console.WriteLine(saldo.ToString("F2"));
+
         }
     }
 }
