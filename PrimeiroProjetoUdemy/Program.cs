@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace PrimeiroProjetoUdemy
 {
@@ -6,7 +7,11 @@ namespace PrimeiroProjetoUdemy
     {
         static void Main(string[] args)
         {
-            PrimeiroExercicio();
+            //PrimeiroExercicio();
+
+
+
+
         }
 
         public static void PrimeiroExercicio()
@@ -32,6 +37,30 @@ namespace PrimeiroProjetoUdemy
             Console.WriteLine($"Medida com oito casas decimais: {_medida}");
             Console.WriteLine($"Arredondado (três casas decimais) {_medida.ToString("F3")}");
             Console.WriteLine($"Separador decimal {_medida.ToString("F3")}");
+
+        }
+        public static void SegundoExercicio()
+        {
+            string _nomeCompleto;
+            int _quartos;
+            double _preco;
+            string _informacoes;
+
+            Console.Write("Nome completo: ");
+            _nomeCompleto = Console.ReadLine();
+            Console.Write("Quantos quartos tem sua casa: ");
+            _quartos = int.Parse(Console.ReadLine());
+            Console.Write("Digite o preço de um produto: ");
+            _preco = char.Parse(Console.ReadLine());
+            Console.Write("Seu ultimo nome, idade e altura: ");
+            _informacoes = Console.ReadLine();
+            
+            string[] _sep = _informacoes.Split(' ');
+            
+            Console.WriteLine(_nomeCompleto);
+            Console.WriteLine(_quartos);
+            Console.WriteLine(_preco);
+            Console.WriteLine();
 
         }
     }
