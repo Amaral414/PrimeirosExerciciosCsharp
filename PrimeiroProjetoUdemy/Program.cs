@@ -8,7 +8,7 @@ namespace PrimeiroProjetoUdemy
         static void Main(string[] args)
         {
             //PrimeiroExercicio();
-
+            SegundoExercicio();
 
 
 
@@ -51,16 +51,21 @@ namespace PrimeiroProjetoUdemy
             Console.Write("Quantos quartos tem sua casa: ");
             _quartos = int.Parse(Console.ReadLine());
             Console.Write("Digite o preço de um produto: ");
-            _preco = char.Parse(Console.ReadLine());
+            _preco = double.Parse(Console.ReadLine());
             Console.Write("Seu ultimo nome, idade e altura: ");
             _informacoes = Console.ReadLine();
             
             string[] _sep = _informacoes.Split(' ');
-            
+            string _ultimoNome = _sep[0];
+            int _idade = int.Parse(_sep[1]);
+            double _altura = double.Parse(_sep[2]);
+
             Console.WriteLine(_nomeCompleto);
             Console.WriteLine(_quartos);
             Console.WriteLine(_preco);
-            Console.WriteLine();
+            Console.WriteLine(_ultimoNome);
+            Console.WriteLine(_idade);
+            Console.WriteLine(_altura);
 
         }
     }
