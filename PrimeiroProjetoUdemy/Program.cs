@@ -8,52 +8,41 @@ namespace PrimeiroProjetoUdemy
     {
         static void Main(string[] args)
         {
-            //PrimeiroExercicio();
-            //SegundoExercicio();
             OpcoesDeExercicios();
-
-
         }
 
-        public static void OpcoesDeExercicios()
+        static void OpcoesDeExercicios()
         {
-            Console.WriteLine("Escolha o exercício que deseja ver");
-            Console.WriteLine("1 - Exercicios sequenciais");
-            Console.WriteLine("2 - Exercicios sla");
-            Console.Write("R: ");
-
-            int _opcao = int.Parse(Console.ReadLine());
-
-            switch (_opcao)
+            int _opcao = CriadorDeOpcoes("Exercicio Sequencial,Exercicio Condicional,Exercicio de repetição");
+            while (_opcao != 4)
             {
-                case 1:
-                    ExerciciosSequenciais();
-                    break;
-                case 2:
-                    Console.WriteLine("Não há nada aqui...");
-                    break;
-            }
-
-            void ExerciciosSequenciais()
-            {
-                Console.WriteLine("1 - Primeiro Exercicio");
-                Console.WriteLine("2 - Segundo Exercicio");
-                Console.WriteLine("3 - Terceiro Exercicio");
-                Console.Write("R: ");
-                int _opcao = int.Parse(Console.ReadLine());
-
                 switch (_opcao)
                 {
                     case 1:
-                        PrimeiroExercicio();
+                        ExerciciosSequenciais();
                         break;
                     case 2:
-                        SegundoExercicio();
-                        break;
-                    case 3:
-                        Console.WriteLine("Não há nada aqui");
+                        Console.WriteLine("Não há nada aqui...");
                         break;
                 }
+            } ;
+            void ExerciciosSequenciais()
+            {
+                do
+                {
+                    switch (CriadorDeOpcoes("Primeiro Exercicio,Segundo Exercicio,Terceiro Exercicio"))
+                    {
+                        case 1:
+                            PrimeiroExercicio();
+                            break;
+                        case 2:
+                            SegundoExercicio();
+                            break;
+                        case 3:
+                            Console.WriteLine("Não há nada aqui");
+                            break;
+                    }
+                }while (_opcao!=5);
 
                 void PrimeiroExercicio()
                 {
@@ -109,7 +98,24 @@ namespace PrimeiroProjetoUdemy
                     Console.WriteLine(_altura);
 
                 }
+
             }
+            int CriadorDeOpcoes(string opcoes)
+            {
+                int _escolha;
+                string[] _opcoes = opcoes.Split(",");
+
+                for (int i = 0; i < _opcoes.Length; i++)
+                {
+                    Console.WriteLine($"{1 + i} - {_opcoes[i]}");
+                }
+                Console.Write("R: ");
+                _escolha = int.Parse(Console.ReadLine());
+
+                return _escolha;
+            }
+
+
         }
     }
 }
