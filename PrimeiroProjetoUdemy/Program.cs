@@ -13,19 +13,28 @@ namespace PrimeiroProjetoUdemy
 
         static void OpcoesDeExercicios()
         {
-            int _opcao = CriadorDeOpcoes("Exercicio Sequencial,Exercicio Condicional,Exercicio de repetição");
-            while (_opcao != 4)
+            int opc = CriadorDeOpcoes("Exercicio Sequencial,Exercicio Condicional,Exercicio de repetição,Exercicios com Classe");
+            do
             {
-                switch (_opcao)
+                switch (opc)
                 {
                     case 1:
                         ExerciciosSequenciais();
                         break;
                     case 2:
-                        Console.WriteLine("Não há nada aqui...");
+                        ExerciciosCondicionais();
+                        break;
+                    case 3:
+                        ExerciciosDeRepeticao();
+                        break;
+                    case 4:
+                        ExerciciosComClasses();   
+                        break;
+                    case 5:
                         break;
                 }
-            } ;
+            } while (opc != 5);
+            
             void ExerciciosSequenciais()
             {
                 do
@@ -42,7 +51,7 @@ namespace PrimeiroProjetoUdemy
                             Console.WriteLine("Não há nada aqui");
                             break;
                     }
-                }while (_opcao!=5);
+                } while (CriadorDeOpcoes("Exercicio Sequencial,Exercicio Condicional,Exercicio de repetição") != 5);
 
                 void PrimeiroExercicio()
                 {
@@ -99,6 +108,26 @@ namespace PrimeiroProjetoUdemy
 
                 }
 
+            }
+            void ExerciciosCondicionais()
+            {
+                
+            }
+            void ExerciciosDeRepeticao()
+            {
+
+            }
+            void ExerciciosComClasses()
+            {
+                /*  Na aula foi criada uma classe com o nome de triangulo que recebia três atributos
+                 *  o lado A, B e C. Para não ficar igual e pra eu testar o conhecimento usando a mesma
+                 *  lógica utilizada em aula, eu criei uma classe Usuario e todo os execícios de classes
+                 *  serão baseados nela...
+                 */
+
+                Usuario usr1, usr2;
+                usr1 = new Usuario();
+                usr2 = new Usuario();
             }
             int CriadorDeOpcoes(string opcoes)
             {
