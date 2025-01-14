@@ -10,9 +10,9 @@ namespace PrimeiroProjetoUdemy
 
         public double ValorTotalEmEstorque() 
         {
-            double _valor = 10.0;
+            double _valorTotal = Quantidade*Preco;
 
-            return _valor;
+            return _valorTotal;
         }
         public void AdicionarProdutos(int quantidade)
         {
@@ -22,13 +22,13 @@ namespace PrimeiroProjetoUdemy
         {
             Quantidade = Quantidade - quantidade;
         }
-        public void DadosDoProduto() 
+        public override string ToString()
         {
-            Console.WriteLine("========================");
-            Console.WriteLine("Produto: " + Nome);
-            Console.WriteLine("Preço: " + Preco);
-            Console.WriteLine("Quantidade: " + Quantidade);
-            Console.WriteLine("========================");
+            return "Produto: " + Nome
+            + "\nPreço: " + Preco
+            + "\nQuantidade: " + Quantidade
+            + "\nPreço total: " + ValorTotalEmEstorque()+"\n";
+            ;
         }
     }
 }
