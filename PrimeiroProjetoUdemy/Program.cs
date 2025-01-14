@@ -13,9 +13,9 @@ namespace PrimeiroProjetoUdemy
 
         static void OpcoesDeExercicios()
         {
-            int opc = CriadorDeOpcoes("Exercicio Sequencial,Exercicio Condicional,Exercicio de repetição,Exercicios com Classe");
-            do
+            for (bool i = true; i == true;)
             {
+                int opc = CriadorDeOpcoes("Exercicio Sequencial,Exercicio Condicional,Exercicio de repetição,Exercicios com Classe,Sair");
                 switch (opc)
                 {
                     case 1:
@@ -28,18 +28,19 @@ namespace PrimeiroProjetoUdemy
                         ExerciciosDeRepeticao();
                         break;
                     case 4:
-                        ExerciciosComClasses();   
+                        ExerciciosComClasses();
                         break;
                     case 5:
+                        i = false;
                         break;
                 }
-            } while (opc != 5);
-            
+            }
+
             void ExerciciosSequenciais()
             {
-                do
+                for (bool i = true; i == true;)
                 {
-                    switch (CriadorDeOpcoes("Primeiro Exercicio,Segundo Exercicio,Terceiro Exercicio"))
+                    switch (CriadorDeOpcoes("Exercício 1,Exercício 2,Exercício 3"))
                     {
                         case 1:
                             PrimeiroExercicio();
@@ -49,9 +50,10 @@ namespace PrimeiroProjetoUdemy
                             break;
                         case 3:
                             Console.WriteLine("Não há nada aqui");
+                            i = false;
                             break;
                     }
-                } while (CriadorDeOpcoes("Exercicio Sequencial,Exercicio Condicional,Exercicio de repetição") != 5);
+                }
 
                 void PrimeiroExercicio()
                 {
@@ -111,7 +113,7 @@ namespace PrimeiroProjetoUdemy
             }
             void ExerciciosCondicionais()
             {
-                
+
             }
             void ExerciciosDeRepeticao()
             {
@@ -119,15 +121,20 @@ namespace PrimeiroProjetoUdemy
             }
             void ExerciciosComClasses()
             {
-                /*  Na aula foi criada uma classe com o nome de triangulo que recebia três atributos
-                 *  o lado A, B e C. Para não ficar igual e pra eu testar o conhecimento usando a mesma
-                 *  lógica utilizada em aula, eu criei uma classe Usuario e todo os execícios de classes
-                 *  serão baseados nela...
-                 */
+                void Exercicios1()
+                {
+                    /* Fazer um programa para ler os dados de um produto em estoque, 
+                     * em seguida mostrar os dados do produto, realizar uma entrada no
+                     * estoque e mostrar novamente os dados e realizar uma
+                     * saida no estoque e mostrar novamente os dados... 
+                     */
 
-                Usuario usr1, usr2;
-                usr1 = new Usuario();
-                usr2 = new Usuario();
+
+
+
+                }
+
+
             }
             int CriadorDeOpcoes(string opcoes)
             {
