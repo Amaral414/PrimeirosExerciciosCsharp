@@ -8,7 +8,42 @@ namespace PrimeiroProjetoUdemy
     {
         static void Main(string[] args)
         {
-            OpcoesDeExercicios();
+            //OpcoesDeExercicios();
+            /* Fazer um programa para ler os dados de um produto em estoque, 
+                    * em seguida mostrar os dados do produto, realizar uma entrada no
+                    * estoque e mostrar novamente os dados e realizar uma
+                    * saida no estoque e mostrar novamente os dados... 
+                    */
+
+            Produto _produto = new Produto();
+            _produto.Nome = "Camisa";
+            _produto.Preco = 50.00;
+            _produto.Quantidade = 5;
+
+            for (bool i = true; i == true;)
+            {
+                Console.WriteLine("1- Ver dados\n2- Adicionar\n3- Remover");
+                int opc = int.Parse(Console.ReadLine());
+                switch (opc)
+                {
+                    case 1:
+                        _produto.DadosDoProduto();
+                        break;
+                    case 2:
+                        Console.Write("Quantidade: ");
+                        int _quantidade = int.Parse(Console.ReadLine());
+                        _produto.AdicionarProdutos(_quantidade);
+                        break;
+                    case 3:
+                        Console.Write("Quantidade: ");
+                        int _quantidade2 = int.Parse(Console.ReadLine());
+                        _produto.RemoverProduto(_quantidade2);
+                        break;
+                    case 4:
+                        i = false;
+                        break;
+                }
+            }
         }
 
         static void OpcoesDeExercicios()
@@ -35,7 +70,6 @@ namespace PrimeiroProjetoUdemy
                         break;
                 }
             }
-
             void ExerciciosSequenciais()
             {
                 for (bool i = true; i == true;)
@@ -121,6 +155,7 @@ namespace PrimeiroProjetoUdemy
             }
             void ExerciciosComClasses()
             {
+                ExerciciosComClasses();
                 void Exercicios1()
                 {
                     /* Fazer um programa para ler os dados de um produto em estoque, 
@@ -129,12 +164,32 @@ namespace PrimeiroProjetoUdemy
                      * saida no estoque e mostrar novamente os dados... 
                      */
 
+                    Produto _produto = new Produto();
+                    _produto.Nome = "Camisa";
+                    _produto.Preco = 50.00;
+                    _produto.Quantidade = 5;
 
-
+                    int opc = CriadorDeOpcoes("Ver dados,Adicionar,Remover");
+                    switch (opc)
+                    {
+                        case 1:
+                            _produto.DadosDoProduto();
+                            break;
+                        case 2:
+                            Console.Write("Quantidade: ");
+                            int _quantidade = int.Parse(Console.ReadLine());
+                            _produto.AdicionarProdutos(_quantidade);
+                            break;
+                        case 3:
+                            Console.Write("Quantidade: ");
+                            int _quantidade2 = int.Parse(Console.ReadLine());
+                            _produto.RemoverProduto(_quantidade2);
+                            break;
+                        case 4:
+                            break;
+                    }
 
                 }
-
-
             }
             int CriadorDeOpcoes(string opcoes)
             {
@@ -150,8 +205,6 @@ namespace PrimeiroProjetoUdemy
 
                 return _escolha;
             }
-
-
         }
     }
 }

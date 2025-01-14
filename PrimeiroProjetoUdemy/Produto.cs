@@ -16,11 +16,11 @@ namespace PrimeiroProjetoUdemy
         }
         public void AdicionarProdutos(int quantidade)
         {
-
+            Quantidade = Quantidade + quantidade;
         }
         public void RemoverProduto(int quantidade)
         {
-
+            Quantidade = Quantidade - quantidade;
         }
         public void DadosDoProduto() 
         {
