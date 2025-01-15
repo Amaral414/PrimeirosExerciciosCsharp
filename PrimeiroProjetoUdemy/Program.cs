@@ -48,8 +48,11 @@ namespace PrimeiroProjetoUdemy
                 Console.Write("Quantidade em estoque: ");
                 byte _quantidadeEmEstoque = byte.Parse(Console.ReadLine()); 
 
-                Console.WriteLine($"Produto {_nomeProduto1} cadastrado com sucesso!\n");
-
+                Console.WriteLine($"\nProduto {_nomeProduto1} cadastrado com sucesso!");
+                Console.WriteLine($"Preço: {_precoProduto}");
+                Console.WriteLine($"Quantidade: {_quantidadeEmEstoque}\n");
+                Console.WriteLine("Precione ENTER...");
+                Console.ReadLine();
             }
             void Exercicio2()
             {
@@ -68,7 +71,9 @@ namespace PrimeiroProjetoUdemy
                     Console.WriteLine("- Tirar a carteira de motorista");                    
                     Console.WriteLine("- Se alistar");                    
                     Console.WriteLine("- Abrir uma conta");                    
-                    Console.WriteLine("E muitas outras coisas\n");                    
+                    Console.WriteLine("E muitas outras coisas\n");
+                    Console.WriteLine("Precione ENTER...");
+                    Console.ReadLine();
                 }
                 else if(_idade >= 15)
                 {
@@ -76,10 +81,14 @@ namespace PrimeiroProjetoUdemy
                     Console.WriteLine("- Se preparar para o ENEM");
                     Console.WriteLine("- Começar um técnico");
                     Console.WriteLine("- Ser jovem aprendiz\n");
+                    Console.WriteLine("Precione ENTER...");
+                    Console.ReadLine();
                 }
                 else
                 {
                     Console.WriteLine("Nessa idade você deve apenas obedecer seus pais kkkkkkk\n");
+                    Console.WriteLine("Precione ENTER...");
+                    Console.ReadLine();
                 }
             }
             void Exercicio3()
@@ -99,7 +108,8 @@ namespace PrimeiroProjetoUdemy
                         Console.WriteLine($"Repetindo {i} vez");
                     }
                 }
-                Console.WriteLine("");
+                Console.WriteLine("Precione ENTER...");
+                Console.ReadLine();
 
             }
             void Exercicio4()
@@ -137,6 +147,8 @@ namespace PrimeiroProjetoUdemy
                             break;
                     }
                 }
+                Console.WriteLine("Precione ENTER...");
+                Console.ReadLine();
             }
             int CriadorDeOpcoes(string opcoes)
             {
