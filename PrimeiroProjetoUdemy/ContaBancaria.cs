@@ -12,7 +12,14 @@ namespace PrimeiroProjetoUdemy
         public string Titular { get; set; }
         public double Saldo { get; set; }
 
+        public ContaBancaria(int numero, string titular, double saldo)
+        {
+            Numero = numero;
+            Titular = titular;
+            Saldo = saldo;
+        }
 
+        public ContaBancaria() { }
 
         public void Deposito(double quantia)
         {

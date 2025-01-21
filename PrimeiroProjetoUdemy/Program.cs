@@ -8,13 +8,14 @@ namespace PrimeiroProjetoUdemy
     {
         static void Main(string[] args)
         {
+            // Console.BackgroundColor = ConsoleColor.Green;
             for (bool i = true; i == true;)
             {
                 int _escolha = CriadorDeOpcoes("O que deseja fazer?", "Criar uma conta,Sacar,Depositar,Visualizar dados,Sair");
                 switch (_escolha)
                 {
                     case 1:
-                        
+                        Cadastro();
                         break;
                     case 2:
                         
@@ -27,6 +28,24 @@ namespace PrimeiroProjetoUdemy
                         break;
                 }
             }
+        }
+        static ContaBancaria Cadastro()
+        {
+
+            Console.WriteLine("====== Cadastro ======");
+            Console.Write("Nome: ");
+            string _nome = Console.ReadLine();
+            Console.WriteLine("Deposito inicial (s/n)? ");
+            char _escolha = char.Parse(Console.ReadLine());
+            ContaBancaria _contaBancaria = new ContaBancaria();
+            if (_escolha == 'S'|| _escolha == 's')
+            {
+                Console.Write("Valor do depósito: ");
+                double _depositoInicial = Console.Read();
+                
+            }
+
+            return _contaBancaria;
         }
 
         static int CriadorDeOpcoes(string titulo, string opcoes)
