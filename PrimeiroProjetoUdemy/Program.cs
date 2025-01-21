@@ -10,16 +10,19 @@ namespace PrimeiroProjetoUdemy
         {
             for (bool i = true; i == true;)
             {
-                int _escolha = CriadorDeOpcoes("O que deseja fazer?", "Fazer cadastro,Visualizar dados,Sair");
+                int _escolha = CriadorDeOpcoes("O que deseja fazer?", "Criar uma conta,Sacar,Depositar,Visualizar dados,Sair");
                 switch (_escolha)
                 {
                     case 1:
-                        Cliente cliente1 = Cliente.CadastrarCliente();
+                        
                         break;
                     case 2:
-                        Cliente.Dados();
+                        
                         break;
                     case 3:
+                        
+                        break;
+                    case 4:
                         i = false;
                         break;
                 }
