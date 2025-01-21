@@ -9,19 +9,25 @@ namespace PrimeiroProjetoUdemy
         static void Main(string[] args)
         {
             // Console.BackgroundColor = ConsoleColor.Green;
+            ContaBancaria ContaBancaria = Cadastro();
             for (bool i = true; i == true;)
             {
-                int _escolha = CriadorDeOpcoes("O que deseja fazer?", "Criar uma conta,Sacar,Depositar,Visualizar dados,Sair");
+                int _escolha = CriadorDeOpcoes("O que deseja fazer?", "Sacar,Depositar,Visualizar dados,Sair");
+
                 switch (_escolha)
                 {
                     case 1:
-                        Cadastro();
+                        Console.WriteLine("Qual valor deseja sacar");
+                        double _valor = double.Parse(Console.ReadLine());
+                        ContaBancaria.Saque(_valor);
                         break;
                     case 2:
-                        
+                        Console.WriteLine("Qual valor deseja depositar");
+                        _valor = double.Parse(Console.ReadLine());
+                        ContaBancaria.Saque(_valor);
                         break;
                     case 3:
-                        
+                        Console.WriteLine($""ContaBancaria.Titular+ContaBancaria.Saldo+ContaBancaria.Numero);
                         break;
                     case 4:
                         i = false;
@@ -31,18 +37,20 @@ namespace PrimeiroProjetoUdemy
         }
         static ContaBancaria Cadastro()
         {
-
+            Random random = new Random();
             Console.WriteLine("====== Cadastro ======");
             Console.Write("Nome: ");
             string _nome = Console.ReadLine();
             Console.WriteLine("Deposito inicial (s/n)? ");
             char _escolha = char.Parse(Console.ReadLine());
-            ContaBancaria _contaBancaria = new ContaBancaria();
-            if (_escolha == 'S'|| _escolha == 's')
+            int _numeroDaConta = random.Next();
+            ContaBancaria _contaBancaria = new ContaBancaria(_numeroDaConta, _nome, 0.0);
+
+            if (_escolha == 'S' || _escolha == 's')
             {
                 Console.Write("Valor do depósito: ");
                 double _depositoInicial = Console.Read();
-                
+                _contaBancaria.Deposito(_depositoInicial);
             }
 
             return _contaBancaria;
