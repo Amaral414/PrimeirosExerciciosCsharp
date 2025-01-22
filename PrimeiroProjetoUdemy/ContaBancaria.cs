@@ -11,23 +11,40 @@ namespace PrimeiroProjetoUdemy
         public int Numero { get; private set; }
         public string Titular { get; set; }
         public double Saldo { get; private  set; }
-
-        public ContaBancaria(int numero, string titular, double saldo)
+        
+        public ContaBancaria(int numero, string titular)
         {
             Numero = numero;
             Titular = titular;
-            Saldo = saldo;
         }
-
+        public ContaBancaria(int numero, string titular, double depositoInicial) : this (numero, titular)
+        {
+            Deposito(depositoInicial);
+        }
+        
         public ContaBancaria() { }
-
+        
         public void Deposito(double quantia)
         {
             Saldo += quantia;
         }
         public void Saque(double quantia)
         {
-            Saldo -= quantia;
+            Saldo -= quantia + 5.0;
+        }
+        public void Cadastro()
+        {
+            int _numeroDaConta = random.Next(1000, 2001);
+            Console.WriteLine("Numero da conta: " + _numeroDaConta);
+            Console.Write("Nome: ");
+            string _nome = Console.ReadLine();
+
+        }
+        public override string ToString()
+        {
+            return $"Numero da conta: {Numero}" +
+                $"\nNome: {Titular}" +
+                $"\nSaldo: {Saldo}";
         }
     }
 }

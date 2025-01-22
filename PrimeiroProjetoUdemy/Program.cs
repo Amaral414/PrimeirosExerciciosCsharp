@@ -9,52 +9,11 @@ namespace PrimeiroProjetoUdemy
         static void Main(string[] args)
         {
             // Console.BackgroundColor = ConsoleColor.Green;
-            ContaBancaria ContaBancaria = Cadastro();
-            for (bool i = true; i == true;)
-            {
-                int _escolha = CriadorDeOpcoes("O que deseja fazer?", "Sacar,Depositar,Visualizar dados,Sair");
-
-                switch (_escolha)
-                {
-                    case 1:
-                        Console.Write("\nValor a sacar: ");
-                        double _valor = double.Parse(Console.ReadLine());
-                        ContaBancaria.Saque(_valor);
-                        break;
-                    case 2:
-                        Console.Write("\nValor a depositar: ");
-                        _valor = double.Parse(Console.ReadLine());
-                        ContaBancaria.Deposito(_valor);
-                        break;
-                    case 3:
-                        Console.WriteLine($"\nNome: {ContaBancaria.Titular}\nSaldo: {ContaBancaria.Saldo}\nNumero da Conta: {ContaBancaria.Numero}");
-                        break;
-                    case 4:
-                        i = false;
-                        break;
-                }
-            }
-        }
-        static ContaBancaria Cadastro()
-        {
             Random random = new Random();
-            Console.WriteLine("====== Cadastro ======");
-            Console.Write("Nome: ");
-            string _nome = Console.ReadLine();
-            Console.Write("Deposito inicial (s/n)? ");
-            char _escolha = char.Parse(Console.ReadLine());
-            int _numeroDaConta = random.Next();
-            ContaBancaria _contaBancaria = new ContaBancaria(_numeroDaConta, _nome, 0.0);
+            ContaBancaria ContaBancaria;
 
-            if (_escolha == 'S' || _escolha == 's')
-            {
-                Console.Write("Valor do depósito: ");
-                double _depositoInicial = Console.Read();
-                _contaBancaria.Deposito(_depositoInicial);
-            }
-
-            return _contaBancaria;
         }
+
 
         static int CriadorDeOpcoes(string titulo, string opcoes)
         {
@@ -67,7 +26,7 @@ namespace PrimeiroProjetoUdemy
                 Console.WriteLine($"{1 + i} - {_opcoes[i]}");
             }
             Console.Write("R: ");
-            _escolha = int.Parse(Console.ReadLine());
+             _escolha = int.Parse(Console.ReadLine());
 
             return _escolha;
         }
