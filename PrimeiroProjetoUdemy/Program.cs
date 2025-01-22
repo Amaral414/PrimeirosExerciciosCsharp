@@ -17,17 +17,17 @@ namespace PrimeiroProjetoUdemy
                 switch (_escolha)
                 {
                     case 1:
-                        Console.WriteLine("Qual valor deseja sacar");
+                        Console.Write("\nValor a sacar: ");
                         double _valor = double.Parse(Console.ReadLine());
                         ContaBancaria.Saque(_valor);
                         break;
                     case 2:
-                        Console.WriteLine("Qual valor deseja depositar");
+                        Console.Write("\nValor a depositar: ");
                         _valor = double.Parse(Console.ReadLine());
-                        ContaBancaria.Saque(_valor);
+                        ContaBancaria.Deposito(_valor);
                         break;
                     case 3:
-                        Console.WriteLine($""ContaBancaria.Titular+ContaBancaria.Saldo+ContaBancaria.Numero);
+                        Console.WriteLine($"\nNome: {ContaBancaria.Titular}\nSaldo: {ContaBancaria.Saldo}\nNumero da Conta: {ContaBancaria.Numero}");
                         break;
                     case 4:
                         i = false;
@@ -41,7 +41,7 @@ namespace PrimeiroProjetoUdemy
             Console.WriteLine("====== Cadastro ======");
             Console.Write("Nome: ");
             string _nome = Console.ReadLine();
-            Console.WriteLine("Deposito inicial (s/n)? ");
+            Console.Write("Deposito inicial (s/n)? ");
             char _escolha = char.Parse(Console.ReadLine());
             int _numeroDaConta = random.Next();
             ContaBancaria _contaBancaria = new ContaBancaria(_numeroDaConta, _nome, 0.0);
