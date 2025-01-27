@@ -34,10 +34,7 @@ namespace PrimeiroProjetoUdemy
         }
         public void Cadastro()
         {
-            int _numeroDaConta = random.Next(1000, 2001);
-            Console.WriteLine("Numero da conta: " + _numeroDaConta);
-            Console.Write("Nome: ");
-            string _nome = Console.ReadLine();
+            
 
         }
         public override string ToString()
