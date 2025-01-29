@@ -29,6 +29,7 @@ namespace PrimeiroProjetoUdemy
             _escolha = int.Parse(Console.ReadLine());
             Console.WriteLine($"====================");
 
+
             return _escolha;
         }
         public static int OpcoesDoMenu(int menu, int opcao)
@@ -43,7 +44,7 @@ namespace PrimeiroProjetoUdemy
                         Cadastro();
                         break;
                     case 2:
-                        Banco.CriadorDeMenu("Clientes cadastrados",$"");
+                        ListarClientes();
                         break;
                     case 3:
                         Console.WriteLine("\nOpção 3 do menu 1\n");
@@ -85,7 +86,7 @@ namespace PrimeiroProjetoUdemy
 
             Random _random = new Random();
             int _numeroDaConta = _random.Next(1000, 2001);
-
+            Console.WriteLine("====== Cadastro ======");
             Console.WriteLine($"\nConta numero {_numeroDaConta}");
             Console.Write("Nome: ");
             string _nome = Console.ReadLine();
@@ -100,7 +101,7 @@ namespace PrimeiroProjetoUdemy
             ListaDeClientes.Add(_cliente);
 
             Console.WriteLine($"\nCliente {_nome} criado com sucesso!\n");
-            Console.WriteLine("Precione ENTER...");Console.ReadLine();
+
         }
         public static void ListarClientes()
         {
@@ -112,8 +113,9 @@ namespace PrimeiroProjetoUdemy
              */
             for (int i = 0; i < ListaDeClientes.Count; i++)
             {
-                Console.WriteLine($"Cliente {i + 1}: {ListaDeClientes[i].}");
+                Console.WriteLine($"Cliente {i + 1}: {ListaDeClientes[i].Nome}");
             }
         }
+        public static void LimparConsole() { Console.WriteLine("Precione ENTER..."); Console.ReadLine();Console.Clear(); }
     }
 }

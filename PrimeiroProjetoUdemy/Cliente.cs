@@ -9,7 +9,7 @@ namespace PrimeiroProjetoUdemy
     internal class Cliente
     {
         private int Id { get; set; }
-        private string Nome { get; set; }
+        public string Nome { get; private set; }
         private long Cpf { get; set; }
         private string Email { get; set; }
         public string Endereco { get; set; }
