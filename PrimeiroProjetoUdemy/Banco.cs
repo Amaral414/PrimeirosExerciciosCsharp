@@ -17,18 +17,23 @@ namespace PrimeiroProjetoUdemy
 
         public static int CriadorDeMenu(string titulo, string opcoes)
         {
-            int _escolha;
-            string[] _opcoes = opcoes.Split(",");
+            int _escolha = 0;
 
-            Console.WriteLine($"====== {titulo} ======");
-            for (int i = 0; i < _opcoes.Length; i++)
+            Console.WriteLine($"{titulo}:");
+            if (opcoes != null)
             {
-                Console.WriteLine($"{1 + i} - {_opcoes[i]}");
-            }
-            Console.Write("R: ");
-            _escolha = int.Parse(Console.ReadLine());
+                string[] _opcoes = opcoes.Split(",");
 
-            LimparConsole(false);
+                for (int i = 0; i < _opcoes.Length; i++)
+                {
+                    Console.WriteLine($"{1 + i} - {_opcoes[i]}");
+                }
+                Console.Write("R: ");
+                _escolha = int.Parse(Console.ReadLine());
+
+                LimparConsole(false);
+            }
+            
 
             return _escolha;
         }
@@ -86,7 +91,7 @@ namespace PrimeiroProjetoUdemy
 
             Random _random = new Random();
             int _numeroDaConta = _random.Next(1000, 2001);
-            Console.WriteLine("====== Cadastro ======");
+            CriadorDeMenu("Cadastro",null);
             Console.WriteLine($"\nConta numero {_numeroDaConta}");
             Console.Write("Nome: ");
             string _nome = Console.ReadLine();
