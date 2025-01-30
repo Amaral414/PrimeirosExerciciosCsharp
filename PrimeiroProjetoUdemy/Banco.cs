@@ -27,15 +27,15 @@ namespace PrimeiroProjetoUdemy
             }
             Console.Write("R: ");
             _escolha = int.Parse(Console.ReadLine());
-            Console.WriteLine($"====================");
 
+            LimparConsole(false);
 
             return _escolha;
         }
         public static int OpcoesDoMenu(int menu, int opcao)
         {
             int _retornoDeMenu = 0;
-            
+
             if (menu == 1)
             {
                 switch (opcao)
@@ -101,7 +101,7 @@ namespace PrimeiroProjetoUdemy
             ListaDeClientes.Add(_cliente);
 
             Console.WriteLine($"\nCliente {_nome} criado com sucesso!\n");
-
+            LimparConsole(true);
         }
         public static void ListarClientes()
         {
@@ -115,7 +115,16 @@ namespace PrimeiroProjetoUdemy
             {
                 Console.WriteLine($"Cliente {i + 1}: {ListaDeClientes[i].Nome}");
             }
+            LimparConsole(true);
         }
-        public static void LimparConsole() { Console.WriteLine("Precione ENTER..."); Console.ReadLine();Console.Clear(); }
+        public static void LimparConsole(bool op)
+        {
+            if (op)
+            {
+                Console.WriteLine("Precione ENTER...");
+                Console.ReadLine();
+            }
+            Console.Clear();
+        }
     }
 }
