@@ -14,7 +14,7 @@ namespace PrimeiroProjetoUdemy
 
             do
             {
-                op = Banco.CriadorDeMenu("Inicio", "Cadastro,Clientes cadastrados,Excluir cadastro,Sair");
+                op = Banco.CriadorDeMenu("Inicio", "Entrar,Cadastro,Clientes cadastrados,Sair");
                 Banco.OpcoesDoMenu(1, op);
             }
             while (op != 4);
