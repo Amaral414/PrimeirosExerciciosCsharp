@@ -44,7 +44,7 @@ namespace PrimeiroProjetoUdemy
                 switch (opcao)
                 {
                     case 1:
-                        Console.WriteLine("Cadastrando...");
+                        Console.WriteLine("Entrando...");
                         break;
                     case 2:
                         Cadastro();
@@ -116,6 +116,25 @@ namespace PrimeiroProjetoUdemy
                 Console.ReadLine();
             }
             Console.Clear();
+        }
+        public static void Entrar()
+        {
+            Console.WriteLine("Número da conta: ");
+            int _numeroDaConta = int.Parse(Console.ReadLine());
+            Console.WriteLine("Senha (4 digitos): ");
+            int _senha = int.Parse(Console.ReadLine());
+
+            /*  Criar uma lógica para que seja percorrida toda
+             *  a lista até que encontra o usuário com o nome
+             *  que bata com o do login, depois disso, precisará
+             *  que a senha do usuário seja igual a senha da lista
+             */
+            if (_numeroDaConta)
+            {
+                
+            }
+
+            ListaDeClientes = new List<Cliente>();
         }
     }
 }
