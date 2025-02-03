@@ -9,15 +9,9 @@ namespace PrimeiroProjetoUdemy
         static void Main(string[] args)
         {
             // Console.BackgroundColor = ConsoleColor.Green;
-            int op;
 
-
-            do
-            {
-                op = Banco.CriadorDeMenu("Inicio", "Entrar,Cadastro,Clientes cadastrados,Sair");
-                Banco.OpcoesDoMenu(1, op);
-            }
-            while (op != 4);
+            Banco.OpcoesDoMenu();
+            Console.WriteLine("Saindo...");
 
         }
 

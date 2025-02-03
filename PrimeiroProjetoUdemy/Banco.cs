@@ -35,38 +35,59 @@ namespace PrimeiroProjetoUdemy
 
             return _escolha;
         }
-        public static int OpcoesDoMenu(int menu, int opcao)
+        public static int OpcoesDoMenu()
         {
+            //  Menu 1:
+            string _listaDeOpcoes;
+            string _titulo;
             int _retornoDeMenu = 0;
+            int _menu = 1;
+            int opcao = 0;
 
-            if (menu == 1)
+            do
             {
-                switch (opcao)
+                if (_menu == 1)
                 {
-                    case 1:
-                        Console.WriteLine("Entrando...");
-                        break;
-                    case 2:
-                        Cadastro();
-                        break;
-                    case 3:
-                        ListarClientes();
-                        break;
+                    _titulo = "Inicio";
+                    _listaDeOpcoes = "Entrar,Cadastrar,Sair";
+                    opcao = CriadorDeMenu(_titulo, _listaDeOpcoes);
+                    switch (opcao)
+                    {
+                        case 1:
+                            Console.WriteLine("Entrando...");
+                            break;
+                        case 2:
+                            Cadastro();
+                            break;
+                        case 3:
+                            _retornoDeMenu = 4;
+                            break;
+                    }
+                }
+                if (_menu == 2)
+                {
+                    _titulo = "Inicio";
+                    _listaDeOpcoes = "Entrar,Cadastro,Clientes cadastrados,Sair";
+                    opcao = CriadorDeMenu(_titulo, _listaDeOpcoes);
+                    switch (opcao)
+                    {
+                        case 1:
+                            ListarClientes();
+                            break;
+                        case 2:
+                            Console.WriteLine("Analisando dados...");
+                            break;
+                        case 3:
+                            Console.WriteLine("Analisando pits top");
+                            break;
+                        case 4:
+                            Console.WriteLine("saindo");
+                            break;
+                    }
                 }
             }
-            else if (menu == 2)
-            {
-                switch (opcao)
-                {
-                    case 1:
-                        Console.WriteLine();
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                }
-            }
+            while (opcao != 4);
+
 
             return _retornoDeMenu;
 
@@ -124,10 +145,10 @@ namespace PrimeiroProjetoUdemy
             int _numeroDaConta = int.Parse(Console.ReadLine());
             Console.WriteLine("Senha (4 digitos): ");
             int _senha = int.Parse(Console.ReadLine());
-            
+
             //  Dados para validação:
             bool _validacao;
-            
+
             // Para cada ( _cliente na ListaDeCliente ){ faça }
             foreach (Cliente _cliente in ListaDeClientes)
             {
