@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,7 +67,7 @@ namespace PrimeiroProjetoUdemy
                         break;
                 }
             }
-       
+
             return _retornoDeMenu;
 
         }
@@ -77,7 +77,7 @@ namespace PrimeiroProjetoUdemy
 
             Random _random = new Random();
             int _numeroDaConta = _random.Next(1000, 2001);
-            CriadorDeMenu("Cadastro",null);
+            CriadorDeMenu("Cadastro", null);
             Console.WriteLine($"\nConta numero {_numeroDaConta}");
             Console.Write("Nome: ");
             string _nome = Console.ReadLine();
@@ -117,24 +117,35 @@ namespace PrimeiroProjetoUdemy
             }
             Console.Clear();
         }
-        public static void Entrar()
+        public static bool Entrar()
         {
+            //  Dados de entrada do login:
             Console.WriteLine("Número da conta: ");
             int _numeroDaConta = int.Parse(Console.ReadLine());
             Console.WriteLine("Senha (4 digitos): ");
             int _senha = int.Parse(Console.ReadLine());
+            
+            //  Dados para validação:
+            bool _validacao;
+            
+            // Para cada ( _cliente na ListaDeCliente ){ faça }
+            foreach (Cliente _cliente in ListaDeClientes)
+            {
+
+            }
 
             /*  Criar uma lógica para que seja percorrida toda
              *  a lista até que encontra o usuário com o nome
              *  que bata com o do login, depois disso, precisará
              *  que a senha do usuário seja igual a senha da lista
              */
-            if (_numeroDaConta)
+            if (_numeroDaConta == 0)
             {
-                
-            }
 
+            }
             ListaDeClientes = new List<Cliente>();
+
+            return false;
         }
     }
 }
