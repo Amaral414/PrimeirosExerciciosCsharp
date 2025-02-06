@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography.X509Certificates;
 
 namespace PrimeiroProjetoUdemy
 {
@@ -37,34 +38,41 @@ namespace PrimeiroProjetoUdemy
         }
         public static int OpcoesDoMenu()
         {
-            //  Menu 1:
+            //  Vriáveis do ambiente
             string _listaDeOpcoes;
             string _titulo;
             int _retornoDeMenu = 0;
-            int _menu = 1;
+            bool validacao = false;
             int opcao = 0;
+
+            //  Clientes adicionados a lista
+            Cliente cliente1 = new Cliente(1, 123, 1554, "Gabriel", 04589273098, "gab@hotmail.com", "Rua da bandeira");
+            Cliente cliente2 = new Cliente(2, 213, 1112, "Alecsandra", 901528976, "alecs@hotmail.com", "Br 153");
+            Cliente cliente3 = new Cliente(3, 321, 2547, "Carlos", 3128129321, "carlinhos@hotmail.com", "Br 153");
+            ListaDeClientes.Add(cliente1);
+            ListaDeClientes.Add(cliente2);
+            ListaDeClientes.Add(cliente3);
+
 
             do
             {
-                if (_menu == 1)
+                _titulo = "Inicio";
+                _listaDeOpcoes = "Entrar,Cadastrar,Sair";
+                opcao = CriadorDeMenu(_titulo, _listaDeOpcoes);
+                switch (opcao)
                 {
-                    _titulo = "Inicio";
-                    _listaDeOpcoes = "Entrar,Cadastrar,Sair";
-                    opcao = CriadorDeMenu(_titulo, _listaDeOpcoes);
-                    switch (opcao)
-                    {
-                        case 1:
-                            Console.WriteLine("Entrando...");
-                            break;
-                        case 2:
-                            Cadastro();
-                            break;
-                        case 3:
-                            _retornoDeMenu = 4;
-                            break;
-                    }
+                    case 1:
+                        validacao = Entrar();
+                        break;
+                    case 2:
+                        Cadastro();
+                        break;
+                    case 3:
+                        _retornoDeMenu = 4;
+                        break;
                 }
-                if (_menu == 2)
+
+                if (validacao)
                 {
                     _titulo = "Inicio";
                     _listaDeOpcoes = "Entrar,Cadastro,Clientes cadastrados,Sair";
@@ -102,6 +110,8 @@ namespace PrimeiroProjetoUdemy
             Console.WriteLine($"\nConta numero {_numeroDaConta}");
             Console.Write("Nome: ");
             string _nome = Console.ReadLine();
+            Console.Write("Senha: ");
+            int _senha = int.Parse(Console.ReadLine());
             Console.Write("CPF (apenas números): ");
             long _cpf = long.Parse(Console.ReadLine());
             Console.Write("Email: ");
@@ -109,8 +119,8 @@ namespace PrimeiroProjetoUdemy
             Console.Write("Endereço: ");
             string _endereco = Console.ReadLine();
 
-            Cliente _cliente = new Cliente(1, _nome, _cpf, _email, _endereco);
-            ListaDeClientes.Add(_cliente);
+            Cliente _clienteCadastrado = new Cliente(1, _senha, _numeroDaConta, _nome, _cpf, _email, _endereco);
+            ListaDeClientes.Add(_clienteCadastrado);
 
             Console.WriteLine($"\nCliente {_nome} criado com sucesso!\n");
             LimparConsole(true);
@@ -140,19 +150,27 @@ namespace PrimeiroProjetoUdemy
         }
         public static bool Entrar()
         {
-            //  Dados de entrada do login:
-            Console.WriteLine("Número da conta: ");
-            int _numeroDaConta = int.Parse(Console.ReadLine());
-            Console.WriteLine("Senha (4 digitos): ");
-            int _senha = int.Parse(Console.ReadLine());
-
-            //  Dados para validação:
-            bool _validacao;
+            bool _validacao = false;
 
             // Para cada ( _cliente na ListaDeCliente ){ faça }
             foreach (Cliente _cliente in ListaDeClientes)
             {
-
+                //  Dados de entrada do login:
+                Console.WriteLine("Número da conta: ");
+                int _numeroDaConta = int.Parse(Console.ReadLine());
+                Console.WriteLine("Senha (4 digitos): ");
+                int _senha = int.Parse(Console.ReadLine());
+                
+                if (_cliente.NumeroDaConta == _numeroDaConta && _cliente.Senha == _senha)
+                {
+                    _validacao = true;
+                    Console.WriteLine("Entrou!");
+                    break;
+                }
+                else if()
+                {
+                    
+                }
             }
 
             /*  Criar uma lógica para que seja percorrida toda
@@ -160,13 +178,8 @@ namespace PrimeiroProjetoUdemy
              *  que bata com o do login, depois disso, precisará
              *  que a senha do usuário seja igual a senha da lista
              */
-            if (_numeroDaConta == 0)
-            {
 
-            }
-            ListaDeClientes = new List<Cliente>();
-
-            return false;
+            return _validacao;
         }
     }
 }
