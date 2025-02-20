@@ -8,19 +8,43 @@ namespace PrimeiroProjetoUdemy
 {
     public class Geral
     {
-        public static void VendaDeItem(Personagem comprador, Personagem vendedor, Item item)
+        
+        public static void TrocaDeItem(Personagem ator1, Personagem ator2)
         {
-            comprador.Inventario.Add(item);
-            comprador.Dinheiro -= item.Preco;
+            /* - Essa função será utilizada para, sempre que houver alguma troca de item
+             * (seja troca ou venda) essa função será chamada
+             * - Mostrar os itens do inventáriodos dois personagens
+             * - Se for dar um item terá que aparecer o inventário do ator1
+             * - Se for receber aparecerá o inventário do ator2.
+             */
+            byte _escolha;
 
-            vendedor.Inventario.Remove(item);
-            vendedor.Dinheiro += item.Preco;
+            _escolha = Geral.CriadorDeMenu("Troca <-- De --> Itens", "Mostrar Itens,Comprar,Vender,Trocar");
 
+
+
+
+            void MostrarIntens()
+            {
+                foreach (Item item in ator1.Inventario)
+                {
+                    Console.WriteLine($"{ator1.Inventario[1]}");
+                }
+            }
+            void VendaDeItem(Personagem comprador, Personagem vendedor, Item item)
+            {
+                comprador.Inventario.Add(item);
+                comprador.Dinheiro -= item.Preco;
+
+                vendedor.Inventario.Remove(item);
+                vendedor.Dinheiro += item.Preco;
+
+            }
         }
-        public static int CriadorDeMenu(string titulo, string opcoes)
+        public static byte CriadorDeMenu(string titulo, string opcoes)
         {
             //  Se o parâmetro 'opcoes' receber null, aparecerá apenas o título
-            int _escolha = 0;
+            byte _escolha = 0;
 
             Console.WriteLine($"{titulo}:");
             if (opcoes != null)
@@ -31,7 +55,7 @@ namespace PrimeiroProjetoUdemy
                     Console.WriteLine($"{1 + i} - {_opcoes[i]}");
                 }
                 Console.Write("R: ");
-                _escolha = int.Parse(Console.ReadLine());
+                _escolha = byte.Parse(Console.ReadLine());
                 LimparConsole(false);
             }
 
