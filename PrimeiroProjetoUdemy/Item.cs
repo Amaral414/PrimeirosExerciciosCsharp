@@ -8,10 +8,28 @@ namespace PrimeiroProjetoUdemy
 {
     public class Item
     {
-        public double Preco {  get; set; }
-        public double Peso {  get; set; }
-        public byte Quantidade {  get; set; }
+        public string Nome { get; set; }
+        public double Preco { get; set; }
+        public double Peso { get; set; }
+        public byte Quantidade { get; set; }
+
+        public Item(string nome, double preco, double peso, byte quantidade)
+        {
+            Nome = nome;
+            Preco = preco;
+            Peso = peso;
+            Quantidade = quantidade;
+        }
 
 
+
+
+
+
+
+        public override string ToString()
+        {
+            return $"{Nome}\n{Preco}\n{Peso}\n{Quantidade}";
+        }
     }
 }
