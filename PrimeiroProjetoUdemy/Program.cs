@@ -10,8 +10,7 @@ namespace PrimeiroProjetoUdemy
         {
             // Console.BackgroundColor = ConsoleColor.Green;
 
-            Banco.OpcoesDoMenu();
-            Console.WriteLine("Saindo...");
+            
 
         }
 
