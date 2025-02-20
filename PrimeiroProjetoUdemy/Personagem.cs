@@ -11,8 +11,7 @@ namespace PrimeiroProjetoUdemy
         public string Nome { get; set; }
         public int Vida { get; set; }
         public double Dinheiro { get; set; }
-        public List<Item> Inventario {  get; set; }
-
+        public List<Item> Inventario { get; set; } = new List<Item>();
 
         public Personagem() { }
         public Personagem(string nome,int vida, double dinheiro)
@@ -22,16 +21,6 @@ namespace PrimeiroProjetoUdemy
             Dinheiro = dinheiro;
             Vida = vida;
         }
-
-
-
-
-
-
-
-
-
-
         public override string ToString()
         {
             string retorno = $"Vida: {Vida}\nDinheiro: {Dinheiro}";

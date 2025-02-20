@@ -20,13 +20,6 @@ namespace PrimeiroProjetoUdemy
             Peso = peso;
             Quantidade = quantidade;
         }
-
-
-
-
-
-
-
         public override string ToString()
         {
             return $"{Nome}\n{Preco}\n{Peso}\n{Quantidade}";

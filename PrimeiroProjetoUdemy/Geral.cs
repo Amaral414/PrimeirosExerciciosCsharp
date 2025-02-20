@@ -17,6 +17,35 @@ namespace PrimeiroProjetoUdemy
             vendedor.Dinheiro += item.Preco;
 
         }
+        public static int CriadorDeMenu(string titulo, string opcoes)
+        {
+            //  Se o parâmetro 'opcoes' receber null, aparecerá apenas o título
+            int _escolha = 0;
+
+            Console.WriteLine($"{titulo}:");
+            if (opcoes != null)
+            {
+                string[] _opcoes = opcoes.Split(",");
+                for (int i = 0; i < _opcoes.Length; i++)
+                {
+                    Console.WriteLine($"{1 + i} - {_opcoes[i]}");
+                }
+                Console.Write("R: ");
+                _escolha = int.Parse(Console.ReadLine());
+                LimparConsole(false);
+            }
+
+            return _escolha;
+        }
+        public static void LimparConsole(bool op)
+        {
+            if (op)
+            {
+                Console.WriteLine("Precione ENTER...");
+                Console.ReadLine();
+            }
+            Console.Clear();
+        }
 
     }
 }
