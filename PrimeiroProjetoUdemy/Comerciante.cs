@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PrimeiroProjetoUdemy
 {
-    public class Item
+    internal class Comerciante : Personagem
     {
-        public double Preco {  get; set; }
-        public double Peso {  get; set; }
-        public byte Quantidade {  get; set; }
-
-
+        public Comerciante() { }
     }
 }

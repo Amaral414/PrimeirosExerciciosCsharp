@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimeiroProjetoUdemy
 {
-    internal class Inventario
+    public class Inventario
     {
         public double Tamanho { get; set; }
         List<Item> ListaInventario {  get; set; }

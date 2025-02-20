@@ -8,10 +8,23 @@ namespace PrimeiroProjetoUdemy
 {
     public class Personagem
     {
-        int Vida { get; set; }
-        double Dinheiro { get; set; }
-        List<int> Inventário { get; set; }
-        
+        public int Vida { get; set; }
+        public double Dinheiro { get; set; }
+        public Inventario Inventario { get; set; }
+
+        public Personagem() { }
+        public Personagem(int vida, double dinheiro, Inventario inventario) 
+        {
+            Vida = vida;
+            Dinheiro = dinheiro;
+            Inventario = inventario;
+            Vida = vida;
+        }
+        public override string ToString()
+        {
+            return $"Vida: {Vida}\nDinheiro: {Dinheiro}\n";
+        }
+
     }
 
     
