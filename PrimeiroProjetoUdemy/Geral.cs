@@ -8,8 +8,8 @@ namespace PrimeiroProjetoUdemy
 {
     public class Geral
     {
-        
-        public static void TrocaDeItem(Personagem ator1, Personagem ator2)
+
+        public static void TrocaDeItem(Personagem jogador, Personagem maquina)
         {
             /* - Essa função será utilizada para, sempre que houver alguma troca de item
              * (seja troca ou venda) essa função será chamada
@@ -17,19 +17,23 @@ namespace PrimeiroProjetoUdemy
              * - Se for dar um item terá que aparecer o inventário do ator1
              * - Se for receber aparecerá o inventário do ator2.
              */
-            byte _escolha;
+            //byte _escolha;
+            //_escolha = Geral.CriadorDeMenu("Troca <-- De --> Itens", "Mostrar Itens,Comprar,Vender,Trocar");
+           
+            MostrarIntens(jogador, maquina);
 
-            _escolha = Geral.CriadorDeMenu("Troca <-- De --> Itens", "Mostrar Itens,Comprar,Vender,Trocar");
-
-
-
-
-            void MostrarIntens()
+            void MostrarIntens(Personagem _ator1, Personagem _ator2)
             {
-                foreach (Item item in ator1.Inventario)
+                Console.WriteLine("========================================");
+                Console.WriteLine($"Itens de: {_ator1.Nome}");
+                Console.WriteLine("--------------------");
+                for (int i = 0; i < _ator1.Inventario.Count; i++)
                 {
-                    Console.WriteLine($"{ator1.Inventario[1]}");
+                    Console.Write($"{i+1}:");
+                    Console.WriteLine(_ator1.Inventario[i]);
+                    Console.WriteLine("--------------------");
                 }
+                Console.WriteLine("========================================");
             }
             void VendaDeItem(Personagem comprador, Personagem vendedor, Item item)
             {
