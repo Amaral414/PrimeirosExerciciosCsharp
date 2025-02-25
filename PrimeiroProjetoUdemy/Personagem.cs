@@ -23,7 +23,7 @@ namespace PrimeiroProjetoUdemy
         }
         public override string ToString()
         {
-            string retorno = $"Vida: {Vida}\nDinheiro: {Dinheiro}";
+            string retorno = $"{Nome}\nVida: {Vida}\nDinheiro: {Dinheiro}";
 
             return retorno;
         }

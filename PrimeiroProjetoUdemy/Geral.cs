@@ -18,14 +18,10 @@ namespace PrimeiroProjetoUdemy
             //byte _escolha;
             //_escolha = Geral.CriadorDeMenu("Troca <-- De --> Itens", "Mostrar Itens,Comprar,Vender,Trocar");
 
-            MostrarIntens(jogador, maquina);
-            MostrarIntens(maquina, jogador);
-            EscolhaDeItem();
-            Console.Clear();
-            Console.WriteLine("Continuar\nVoltar");
-            Console.ReadLine();
-            MostrarIntens(maquina, jogador);
-
+            VendaDeItem(jogador, maquina);
+            Console.WriteLine(jogador);
+            Console.WriteLine();
+            Console.WriteLine(maquina);
 
             byte EscolhaDeItem()
             {
@@ -34,27 +30,38 @@ namespace PrimeiroProjetoUdemy
                 item = byte.Parse(Console.ReadLine());
                 return item;
             };
-            void MostrarIntens(Personagem _ator1, Personagem _ator2)
+            void MostrarIntens(Personagem ator1)
             {
                 Console.WriteLine("==============================");
-                Console.WriteLine($"Itens de: {_ator1.Nome}");
+                Console.WriteLine($"Itens de: {ator1.Nome}\nDinheiro: {ator1.Dinheiro}");
                 Console.WriteLine("--------------------");
-                for (int i = 0; i < _ator1.Inventario.Count; i++)
+                for (int i = 0; i < ator1.Inventario.Count; i++)
                 {
                     Console.Write($"| {i + 1}: ");
-                    Console.WriteLine(_ator1.Inventario[i]);
+                    Console.WriteLine(ator1.Inventario[i]);
                     Console.WriteLine("--------------------");
                 }
                 Console.WriteLine("==============================");
             }
-            void VendaDeItem(Personagem comprador, Personagem vendedor, Item item)
+            void VendaDeItem(Personagem comprador, Personagem vendedor)
             {
-                comprador.Inventario.Add(item);
-                comprador.Dinheiro -= item.Preco;
+                byte _escolha = 0;
+                do
+                {
+                    MostrarIntens(vendedor);
+                    byte _item = EscolhaDeItem();
+                    try
+                    { //  O item numero x vai sair do inventario do vendedor
+                        vendedor.Inventario.Remove(vendedor.Inventario[_item - 1]);
+                        vendedor.Dinheiro += vendedor.Inventario[_item - 1].Preco;// O Dinheiro do vendedor vai receber o dinehiro dele mais o preço do item
+                      //  O item numero x vai entrar no inventario do comprador
+                        comprador.Inventario.Add(vendedor.Inventario[_item - 1]);
+                        comprador.Dinheiro -= vendedor.Inventario[_item - 1].Preco;// O Dinheiro do comprador vai receber o dinehiro dele menos o preço do item
+                    }
+                    catch { Console.WriteLine("Saldo insuficiente!"); }
+                    _escolha = CriadorDeMenu("Comprar outro item?", "Sim,Não");
 
-                vendedor.Inventario.Remove(item);
-                vendedor.Dinheiro += item.Preco;
-
+                } while( _escolha != 2 );
             }
         }
         public static byte CriadorDeMenu(string titulo, string opcoes)
