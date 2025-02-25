@@ -48,20 +48,18 @@ namespace PrimeiroProjetoUdemy
                 byte _escolha = 0;
                 do
                 {
+                    MostrarIntens(comprador);
                     MostrarIntens(vendedor);
                     byte _item = EscolhaDeItem();
-                    try
-                    { //  O item numero x vai sair do inventario do vendedor
-                        vendedor.Inventario.Remove(vendedor.Inventario[_item - 1]);
-                        vendedor.Dinheiro += vendedor.Inventario[_item - 1].Preco;// O Dinheiro do vendedor vai receber o dinehiro dele mais o preço do item
-                      //  O item numero x vai entrar no inventario do comprador
-                        comprador.Inventario.Add(vendedor.Inventario[_item - 1]);
-                        comprador.Dinheiro -= vendedor.Inventario[_item - 1].Preco;// O Dinheiro do comprador vai receber o dinehiro dele menos o preço do item
-                    }
-                    catch { Console.WriteLine("Saldo insuficiente!"); }
-                    _escolha = CriadorDeMenu("Comprar outro item?", "Sim,Não");
 
-                } while( _escolha != 2 );
+                    //  O item numero x vai sair do inventario do vendedor
+                    vendedor.Inventario.Remove(vendedor.Inventario[_item-1]);
+                    vendedor.Dinheiro += vendedor.Inventario[_item - 1].Preco;// O Dinheiro do vendedor vai receber o dinehiro dele mais o preço do item
+                    //  O item numero x vai entrar no inventario do comprador
+                    comprador.Inventario.Add(vendedor.Inventario[_item - 1]);
+                    comprador.Dinheiro -= vendedor.Inventario[_item - 1].Preco;// O Dinheiro do comprador vai receber o dinehiro dele menos o preço do item
+                    _escolha = CriadorDeMenu("Comprar outro item?", "Sim,Não");
+                }while( _escolha != 2 );
             }
         }
         public static byte CriadorDeMenu(string titulo, string opcoes)
